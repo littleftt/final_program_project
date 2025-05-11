@@ -46,9 +46,9 @@ public class MenuManager : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
     }
-   public void PlayGame()
+   public void SinglePlayerGame()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("SinglePlayer Game");
         Time.timeScale = 1;
     }
 
