@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem dirt;
     public ParticleSystem explosion;
 
+    public MenuManager menuUI;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(deathSfx);
             dirt.Stop();
             explosion.Play();
+            menuUI.GameOver();
         }
     }
 }

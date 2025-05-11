@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
     public AudioMixer audioMixer;
     public Slider musicSlider;
 
+    //music setting checking
     private void Start()
     {
         if (PlayerPrefs.HasKey("Volume"))
@@ -25,12 +26,14 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    //for load music slider setting
     private void LoadVolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("Volume");
         SetVolume();
     }
 
+    //for set music slider
     public void SetVolume()
     {
         float volume = musicSlider.value;
@@ -41,12 +44,19 @@ public class MenuManager : MonoBehaviour
    public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        Time.timeScale = 1;
     }
    public void PlayGame()
     {
         SceneManager.LoadScene("MainGame");
+        Time.timeScale = 1;
     }
 
+    public void PauseMenuUI()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0;
+    }
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -62,6 +72,12 @@ public class MenuManager : MonoBehaviour
     {
         optionMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
+    }
+
+    public void GameOver()
+    {
+        gameOverUI.SetActive(true);
+        Time.timeScale = 0;
     }
     public void QuitGame()
     {
