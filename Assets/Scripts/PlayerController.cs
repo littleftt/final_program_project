@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float gravityMultiplier = 1f;
 
     public bool isGameOver = false;
+
     private Rigidbody rb;
 
     private InputAction jumpAction;
@@ -27,12 +28,9 @@ public class PlayerController : MonoBehaviour
 
     public MenuManager menuUI;
 
-<<<<<<< HEAD
     public float startingHealth;
     public float currentHealth;
 
-=======
->>>>>>> parent of e0ddeaf (Updated หัวข้อที่ 1)
     void Awake()
     {
         currentHealth = startingHealth;
@@ -74,7 +72,6 @@ public class PlayerController : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-<<<<<<< HEAD
             playerAudio.PlayOneShot(hitSfx);
             explosion.Play();
         }
@@ -91,8 +88,6 @@ public class PlayerController : MonoBehaviour
         
         if(currentHealth == 0)
         {
-=======
->>>>>>> parent of e0ddeaf (Updated หัวข้อที่ 1)
             Debug.Log("Game Over");
             isGameOver = true;
             playerAnim.SetBool("Death_b", true);
@@ -101,12 +96,9 @@ public class PlayerController : MonoBehaviour
             menuUI.GameOver();
         }
     }
-<<<<<<< HEAD
 
     public void AddHeart(float heartValue)
     {
         currentHealth = Mathf.Clamp(currentHealth + heartValue, 0, startingHealth);
     }
-=======
->>>>>>> parent of e0ddeaf (Updated หัวข้อที่ 1)
 }
