@@ -4513,10 +4513,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 5626093159792937190, guid: f2132836654cce146ae0fd83d2dc2a2d, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of e0ddeaf (Updated หัวข้อที่ 1)
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4730,7 +4733,10 @@ SceneRoots:
   - {fileID: 835818921}
   - {fileID: 1653295083643701775}
   - {fileID: 132895512}
+<<<<<<< HEAD
   - {fileID: 1519505846}
+=======
+>>>>>>> parent of e0ddeaf (Updated หัวข้อที่ 1)
   - {fileID: 1154698888}
   - {fileID: 404427456}
   - {fileID: 966327336}

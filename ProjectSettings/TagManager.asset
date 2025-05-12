@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Ground
   - Obstacle
+<<<<<<< HEAD
   - healCollectible
+=======
+>>>>>>> parent of e0ddeaf (Updated หัวข้อที่ 1)
   layers:
   - Default
   - TransparentFX
