@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Ground
   - Obstacle
+<<<<<<< HEAD
   - healCollectible
+=======
+  - PlatformSpawnPoint
+>>>>>>> e0ddeaf0a0b215cf2d9d5cdacc4e904818b4ab5d
   layers:
   - Default
   - TransparentFX
