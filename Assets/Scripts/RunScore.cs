@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class RunScore : MonoBehaviour
 {
-    private float runningScore = 0;
+    public float runningScore = 0;
     public TextMeshProUGUI runningScoreText;
 
     private float timer = 0f;

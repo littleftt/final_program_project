@@ -1862,10 +1862,12 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 3404555}
   gameOverUI: {fileID: 1448852609}
   optionMenuUI: {fileID: 728060437}
-  gameoverRunScore: {fileID: 0}
-  gameoverCoinsCount: {fileID: 0}
+  gameoverRunScore: {fileID: 650164425}
+  gameoverCoinsCount: {fileID: 1717930015}
   audioMixer: {fileID: 24100000, guid: cc5196aea79e1024ab71ba3fbde2754f, type: 2}
   musicSlider: {fileID: 838686876}
+  runScore: {fileID: 404427458}
+  finalCoinsCount: {fileID: 404427459}
 --- !u!114 &404427458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1878,6 +1880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c245bdeb502964aa774cfc02b2adb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runningScore: 0
   runningScoreText: {fileID: 1025541315}
   scoreUpdateInterval: 0.5
 --- !u!114 &404427459
@@ -2360,8 +2363,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: -30}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 102.3, y: -50}
+  m_SizeDelta: {x: 1070.4, y: 73.9634}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &650164425
 MonoBehaviour:
@@ -2383,7 +2386,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9999999 m
+  m_text: You ran for 9999999 m!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -2410,10 +2413,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
+  m_fontSize: 66.2
   m_fontSizeBase: 80
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2448,7 +2451,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -323.9286, w: 0}
+  m_margin: {x: 0, y: 0, z: 2.2462158, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4235,8 +4238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: -130}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 100, y: -136.69751}
+  m_SizeDelta: {x: 1059.7393, y: 63.395}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717930015
 MonoBehaviour:
@@ -4258,7 +4261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9999999
+  m_text: You have collected 9999999 gold coins!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -4285,10 +4288,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
+  m_fontSize: 56.7
   m_fontSizeBase: 80
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -4323,7 +4326,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -323.9286, w: 0}
+  m_margin: {x: 0, y: 0, z: -1.6490479, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

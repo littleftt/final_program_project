@@ -16,6 +16,9 @@ public class MenuManager : MonoBehaviour
     public AudioMixer audioMixer;
     public Slider musicSlider;
 
+    public RunScore runScore;
+    public CoinsManager finalCoinsCount;
+
     //music setting checking
     private void Start()
     {
@@ -81,6 +84,8 @@ public class MenuManager : MonoBehaviour
     public void GameOver()
     {
         gameOverUI.SetActive(true);
+        gameoverRunScore.text = "You ran for " + runScore.runningScore.ToString() + " M!";
+        gameoverCoinsCount.text = "You have collected " + finalCoinsCount.coinsCount.ToString() + " gold coins!";
         Time.timeScale = 0;
     }
     public void QuitGame()
