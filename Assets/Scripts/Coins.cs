@@ -1,19 +1,20 @@
 using UnityEngine;
 
-public class HealingCollectible : MonoBehaviour
+public class Coins : MonoBehaviour
 {
-    public float healValue;
-
-    private void Start()
+    public float coinValue;
+    
+    void Start()
     {
         Destroy(gameObject, 6);
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("heal picked up");
-            collision.gameObject.GetComponent<PlayerController>().AddHeart(healValue);
+            Debug.Log("coins picked up");
+            collision.gameObject.GetComponent<PlayerController>().AddCoins(coinValue);
             Destroy(this.gameObject);
         }
     }

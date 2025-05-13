@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,9 @@ public class MenuManager : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject gameOverUI;
     public GameObject optionMenuUI;
+
+    public TextMeshProUGUI gameoverRunScore;
+    public TextMeshProUGUI gameoverCoinsCount;
 
     public AudioMixer audioMixer;
     public Slider musicSlider;
