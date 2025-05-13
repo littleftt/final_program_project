@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class RepeatBackground : MonoBehaviour
 {
+    private Vector3 scale;
     private Vector3 startPos;
     private float width = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        scale = transform.localScale;
         startPos = transform.position;
         var b = GetComponent<BoxCollider>();
-        width = b.size.x;
+        width = (b.size.x)*(scale.x);
+
     }
 
     // Update is called once per frame
