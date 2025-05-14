@@ -1750,7 +1750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1369026800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1932,8 +1932,12 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 1369026799}
   gameOverUI: {fileID: 0}
   optionMenuUI: {fileID: 1057776837}
+  gameoverRunScore: {fileID: 0}
+  gameoverCoinsCount: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: cc5196aea79e1024ab71ba3fbde2754f, type: 2}
   musicSlider: {fileID: 769813227}
+  runScore: {fileID: 0}
+  finalCoinsCount: {fileID: 0}
 --- !u!1 &1820552114
 GameObject:
   m_ObjectHideFlags: 0
