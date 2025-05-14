@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip deathSfx;
     public AudioClip healSfx;
     public AudioClip hitSfx;
+    public AudioClip coinSfx;
 
     public AudioSource playerAudio;
 
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
     public float startingHealth;
     public float currentHealth;
+
+    public CoinsManager coinsManager;
 
     void Awake()
     {
@@ -95,6 +98,11 @@ public class PlayerController : MonoBehaviour
         {
             playerAudio.PlayOneShot(healSfx);
         }
+
+        else if (collision.gameObject.CompareTag("Coins"))
+        {
+            playerAudio.PlayOneShot(coinSfx);
+        }
     }
 
     public void TakeDamage(float damage)
@@ -111,7 +119,10 @@ public class PlayerController : MonoBehaviour
             menuUI.GameOver();
         }
     }
-
+    public void AddCoins(float coinValue)
+    {
+        coinsManager.coinsCount++;
+    }
     public void AddHeart(float heartValue)
     {
         currentHealth = Mathf.Clamp(currentHealth + heartValue, 0, startingHealth);

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CollectibleSpawner : MonoBehaviour
 {
-    public GameObject healpickupPrefab;
+    public GameObject[] Prefabs;
     public Transform collectibleSpawnPoint;
 
     private void Start()
@@ -11,10 +11,11 @@ public class CollectibleSpawner : MonoBehaviour
     }
     void Spawn()
     {
+        int prefabsIndex = Random.Range(0, Prefabs.Length);
         Instantiate(
-           healpickupPrefab,
+           Prefabs[prefabsIndex],
             collectibleSpawnPoint.position,
-           healpickupPrefab.transform.rotation
+           Prefabs[prefabsIndex].transform.rotation
         );
     }
 }
