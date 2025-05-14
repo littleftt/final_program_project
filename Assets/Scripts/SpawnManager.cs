@@ -11,11 +11,6 @@ public class SpawnManager : MonoBehaviour
 
     void Spawn()
     {
-        //Instantiate(
-        //    obstaclePrefab,
-        //    spawnPoint.position,
-        //    obstaclePrefab.transform.rotation
-        //);
         GameObject p = ObstacleObjectPool.GetInstance().Acquire();
         p.transform.SetLocalPositionAndRotation(transform.position, transform.rotation);
     }

@@ -2,24 +2,48 @@ using UnityEngine;
 
 public class MoveLeft : MonoBehaviour
 {
-    private float bound = -10;
+    private float bound = -4.5f;
     public float speed = 10f;
-    public PlayerController player;
+    private PlayerController player1;
+    private PlayerController player2;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameObject go = GameObject.Find("Player");
-        player = go.GetComponent<PlayerController>();
+        GameObject go1 = GameObject.Find("Player 1");
+        if (go1 != null)
+        {
+            player1 = go1.GetComponent<PlayerController>();
+        }
+
+        GameObject go2 = GameObject.Find("Player 2");
+        if (go2 != null)
+        {
+            player2 = go2.GetComponent<PlayerController>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.isGameOver == false)
+        bool move = true;
+
+        
+        if (this.CompareTag("backGround1") && player1 != null && player1.isGameOver)
+        {
+            move = false;
+        }
+
+        if (this.CompareTag("backGround2") && player2 != null  && player2.isGameOver)
+        {
+            move = false;
+        }
+
+        if (move)
         {
             transform.Translate(speed * Vector3.left * Time.deltaTime);
         }
+
         if (this.CompareTag("Obstacle") && transform.position.x < bound)
         {
             // Destroy(gameObject);

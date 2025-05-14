@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -8,9 +9,17 @@ public class MenuManager : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject gameOverUI;
     public GameObject optionMenuUI;
+    public GameObject player1WinUI;
+    public GameObject player2WinUI;
+
+    public TextMeshProUGUI gameoverRunScore;
+    public TextMeshProUGUI gameoverCoinsCount;
 
     public AudioMixer audioMixer;
     public Slider musicSlider;
+
+    public RunScore runScore;
+    public CoinsManager finalCoinsCount;
 
     //music setting checking
     private void Start()
@@ -52,6 +61,12 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void TwoPlayerGame()
+    {
+        SceneManager.LoadScene("TwoPlayer Game");
+        Time.timeScale = 1;
+    }
+
     public void PauseMenuUI()
     {
         pauseMenuUI.SetActive(true);
@@ -77,10 +92,25 @@ public class MenuManager : MonoBehaviour
     public void GameOver()
     {
         gameOverUI.SetActive(true);
+        gameoverRunScore.text = "You ran for " + runScore.runningScore.ToString() + " M!";
+        gameoverCoinsCount.text = "You have collected " + finalCoinsCount.coinsCount.ToString() + " gold coins!";
         Time.timeScale = 0;
     }
+
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void Player1Win()
+    {
+        player1WinUI.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Player2Win()
+    {
+        player2WinUI.SetActive(true);
+        Time.timeScale = 0;
     }
 }
