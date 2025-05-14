@@ -13,6 +13,7 @@ TagManager:
   - backGround1
   - backGround2
   - PlatformSpawnPoint
+  - Single
   layers:
   - Default
   - TransparentFX

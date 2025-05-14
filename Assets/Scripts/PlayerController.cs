@@ -63,16 +63,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
 
-        if (CompareTag("Player1"))
-        {
-            jumpAction = InputSystem.actions.FindAction("Jump1");
-        }
-
-        if (CompareTag("Player2"))
-        {
-            jumpAction = InputSystem.actions.FindAction("Jump2");
-        }
-
         normalCollider = GetComponent<BoxCollider>();
         smallCollider = GetComponent<CapsuleCollider>();
         smallCollider.enabled = false;
@@ -84,6 +74,17 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (CompareTag("Player1") || CompareTag("Single"))
+        {
+            jumpAction = InputSystem.actions.FindAction("Jump1");
+        }
+
+        if (CompareTag("Player2"))
+        {
+            jumpAction = InputSystem.actions.FindAction("Jump2");
+        }
+
+
         Physics.gravity *= gravityMultiplier;
         isGameOver = false;
         playerAnim.SetFloat("Speed_f", 1.0f);
@@ -145,9 +146,19 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("Death_b", true);
             playerAudio.PlayOneShot(deathSfx);
             dirt.Stop();
-            menuUI.GameOver();
-            rb.linearVelocity = Vector3.zero;
-
+            switch (gameObject.tag)
+            {
+                case "Player1":
+                    menuUI.Player2Win();
+                    break;
+                case "Player2":
+                    menuUI.Player1Win();
+                    break;
+                case "Single":
+                    menuUI.GameOver();
+                    break;
+            }
+            
         }
     }
     public void AddCoins(float coinValue)
@@ -196,7 +207,7 @@ public class PlayerController : MonoBehaviour
     {
         rotation = Camera.main.transform.rotation;
         Debug.Log(rotation);
-        Camera.main.transform.rotation = Quaternion.Euler(0, 0, 180);
+        Camera.main.transform.rotation = Quaternion.Euler(8.676f, 0, 180);
 
         yield return new WaitForSeconds(10f);
 

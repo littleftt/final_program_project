@@ -9,6 +9,8 @@ public class MenuManager : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject gameOverUI;
     public GameObject optionMenuUI;
+    public GameObject player1WinUI;
+    public GameObject player2WinUI;
 
     public TextMeshProUGUI gameoverRunScore;
     public TextMeshProUGUI gameoverCoinsCount;
@@ -59,6 +61,12 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void TwoPlayerGame()
+    {
+        SceneManager.LoadScene("TwoPlayer Game");
+        Time.timeScale = 1;
+    }
+
     public void PauseMenuUI()
     {
         pauseMenuUI.SetActive(true);
@@ -88,8 +96,21 @@ public class MenuManager : MonoBehaviour
         gameoverCoinsCount.text = "You have collected " + finalCoinsCount.coinsCount.ToString() + " gold coins!";
         Time.timeScale = 0;
     }
+
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void Player1Win()
+    {
+        player1WinUI.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Player2Win()
+    {
+        player2WinUI.SetActive(true);
+        Time.timeScale = 0;
     }
 }
