@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
 
     public CoinsManager coinsManager;
 
+    public float normalFormJumpForce;
+    public float smallFormJumpForce = 5f;
+
     void Awake()
     {
         currentHealth = startingHealth;
@@ -121,10 +124,34 @@ public class PlayerController : MonoBehaviour
     }
     public void AddCoins(float coinValue)
     {
+
+        if (isSmallMode) return;
+        isSmallMode = true;
+
+        transform.localScale = smallScale;
+
+        jumpForce = smallFormJumpForce;
+
+        normalCollider.enabled = false;
+        smallCollider.enabled = true;
+
         coinsManager.coinsCount++;
+
     }
     public void AddHeart(float heartValue)
     {
+
+        if (!isSmallMode) return;
+        isSmallMode = false;
+
+        transform.localScale = normalScale;
+
+        jumpForce = normalFormJumpForce;
+
+        normalCollider.enabled = true;
+        smallCollider.enabled = false;
+
         currentHealth = Mathf.Clamp(currentHealth + heartValue, 0, startingHealth);
+
     }
 }
