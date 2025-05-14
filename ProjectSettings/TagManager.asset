@@ -6,7 +6,12 @@ TagManager:
   tags:
   - Ground
   - Obstacle
-  - PlatformSpawnPoint
+  - healCollectible
+  - Coins
+  - Player1
+  - Player2
+  - backGround1
+  - backGround2
   layers:
   - Default
   - TransparentFX
