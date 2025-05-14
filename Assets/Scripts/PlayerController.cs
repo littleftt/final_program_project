@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
     private BoxCollider normalCollider;
     private CapsuleCollider smallCollider;
 
+    public float normalFormJumpForce;
+    public float smallFormJumpForce = 5f;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -83,6 +86,8 @@ public class PlayerController : MonoBehaviour
 
         transform.localScale = smallScale;
 
+        jumpForce = smallFormJumpForce;
+
         normalCollider.enabled = false;
         smallCollider.enabled = true;
     }
@@ -93,6 +98,8 @@ public class PlayerController : MonoBehaviour
         isSmallMode = false;
 
         transform.localScale = normalScale;
+
+        jumpForce = normalFormJumpForce;
 
         normalCollider.enabled = true;
         smallCollider.enabled = false;
