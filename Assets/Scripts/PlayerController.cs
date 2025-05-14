@@ -40,7 +40,16 @@ public class PlayerController : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
-        jumpAction = InputSystem.actions.FindAction("Jump");
+
+        if (CompareTag("Player1"))
+        {
+            jumpAction = InputSystem.actions.FindAction("Jump1");
+        }
+
+        if (CompareTag("Player2"))
+        {
+            jumpAction = InputSystem.actions.FindAction("Jump2");
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -49,19 +58,25 @@ public class PlayerController : MonoBehaviour
         Physics.gravity *= gravityMultiplier;
         isGameOver = false;
         playerAnim.SetFloat("Speed_f", 1.0f);
+        jumpAction.Enable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (jumpAction.triggered && isOnGround && !isGameOver)
+        if ((jumpAction.triggered) && isOnGround && !isGameOver)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isOnGround = false;
-            playerAnim.SetTrigger("Jump_trig");
-            playerAudio.PlayOneShot(jumpSfx);
-            dirt.Stop();
+            Jump();
         }
+    }
+
+    private void Jump()
+    {
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        isOnGround = false;
+        playerAnim.SetTrigger("Jump_trig");
+        playerAudio.PlayOneShot(jumpSfx);
+        dirt.Stop();
     }
 
     private void OnCollisionEnter(Collision collision)
