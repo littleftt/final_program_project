@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     public float jumpForce;
 
-    public float gravityMultiplier;
-
     public bool isGameOver;
 
     private Rigidbody rb;
@@ -43,9 +41,6 @@ public class PlayerController : MonoBehaviour
     private BoxCollider normalCollider;
     private CapsuleCollider smallCollider;
 
-    public float normalFormJumpForce;
-    public float smallFormJumpForce = 5f;
-
     private Coroutine upSideDownRoutine;
     private Quaternion rotation;
 
@@ -56,8 +51,6 @@ public class PlayerController : MonoBehaviour
     private Coroutine doublePlatformRoutine;
     void Awake()
     {
-        
-        normalFormJumpForce = jumpForce;
         currentHealth = startingHealth;
 
         rb = GetComponent<Rigidbody>();
@@ -84,8 +77,6 @@ public class PlayerController : MonoBehaviour
             jumpAction = InputSystem.actions.FindAction("Jump2");
         }
 
-
-        Physics.gravity *= gravityMultiplier;
         isGameOver = false;
         playerAnim.SetFloat("Speed_f", 1.0f);
         jumpAction.Enable();
@@ -141,7 +132,7 @@ public class PlayerController : MonoBehaviour
         
         if(currentHealth == 0)
         {
-            Debug.Log("Game Over");
+            isOnGround = true;
             isGameOver = true;
             playerAnim.SetBool("Death_b", true);
             playerAudio.PlayOneShot(deathSfx);
@@ -177,8 +168,6 @@ public class PlayerController : MonoBehaviour
 
         transform.localScale = smallScale;
 
-        jumpForce = smallFormJumpForce;
-
         normalCollider.enabled = false;
         smallCollider.enabled = true;
     }
@@ -189,8 +178,6 @@ public class PlayerController : MonoBehaviour
         isSmallMode = false;
 
         transform.localScale = normalScale;
-
-        jumpForce = normalFormJumpForce;
 
         normalCollider.enabled = true;
         smallCollider.enabled = false;

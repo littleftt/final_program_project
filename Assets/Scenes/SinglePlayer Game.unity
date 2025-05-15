@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d001704f07f385b4baad777160cd0804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player1
+  playerTag: Single
   totalHealthBar: {fileID: 1429825900}
   currentHealthBar: {fileID: 94319589}
 --- !u!1 &132895510
@@ -491,7 +491,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4bb65c88934e28448d8dd0360b2549b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1667492346595872703}
   spawnPoint: {fileID: 1183671265}
 --- !u!4 &132895512
 Transform:
@@ -502,7 +501,7 @@ Transform:
   m_GameObject: {fileID: 132895510}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30, y: 0, z: 0}
+  m_LocalPosition: {x: 30, y: 0, z: -7.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1783,10 +1782,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1858,6 +1857,8 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 3404555}
   gameOverUI: {fileID: 1448852609}
   optionMenuUI: {fileID: 728060437}
+  player1WinUI: {fileID: 0}
+  player2WinUI: {fileID: 0}
   gameoverRunScore: {fileID: 650164425}
   gameoverCoinsCount: {fileID: 1717930015}
   audioMixer: {fileID: 24100000, guid: cc5196aea79e1024ab71ba3fbde2754f, type: 2}
@@ -2147,7 +2148,7 @@ Transform:
   m_GameObject: {fileID: 534669902}
   serializedVersion: 2
   m_LocalRotation: {x: 0.07564008, y: 0, z: 0, w: 0.9971352}
-  m_LocalPosition: {x: 8, y: 6.61, z: -15}
+  m_LocalPosition: {x: 8, y: 6.61, z: -22.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2694,7 +2695,7 @@ Transform:
   m_GameObject: {fileID: 719203965}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40, y: 3, z: 0}
+  m_LocalPosition: {x: 40, y: 3, z: -7.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2939,7 +2940,7 @@ Transform:
   m_GameObject: {fileID: 835818919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45, y: 9.5, z: 4}
+  m_LocalPosition: {x: 45, y: 9.5, z: -3.8200002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3868,7 +3869,7 @@ Transform:
   m_GameObject: {fileID: 1519505844}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27, y: 0, z: 0}
+  m_LocalPosition: {x: 27, y: 0, z: -7.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5145,7 +5146,7 @@ Transform:
   m_GameObject: {fileID: 2014335011}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 0, z: 0}
+  m_LocalPosition: {x: 15, y: 0, z: -7.82}
   m_LocalScale: {x: 5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5165,11 +5166,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4405728185080775720, guid: f2132836654cce146ae0fd83d2dc2a2d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4405728185080775720, guid: f2132836654cce146ae0fd83d2dc2a2d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -7.82
       objectReference: {fileID: 0}
     - target: {fileID: 4405728185080775720, guid: f2132836654cce146ae0fd83d2dc2a2d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5205,7 +5206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5626093159792937190, guid: f2132836654cce146ae0fd83d2dc2a2d, type: 3}
       propertyPath: m_TagString
-      value: Player1
+      value: Single
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5400,8 +5401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8aa7337a3eba8d45a61a233ca0c9511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 17
-  gravityMultiplier: 4
+  jumpForce: 15
   isGameOver: 0
   jumpSfx: {fileID: 8300000, guid: 113ee460fadc340e4957a7404a9fbb27, type: 3}
   deathSfx: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
@@ -5415,8 +5415,6 @@ MonoBehaviour:
   startingHealth: 3
   currentHealth: 0
   coinsManager: {fileID: 404427459}
-  normalFormJumpForce: 0
-  smallFormJumpForce: 17
   upperPlatformPrefab: {fileID: 9206980887454331838, guid: 72a926fd8ca0b094580ee4ea6d2394a3, type: 3}
 --- !u!136 &1667492346595872705
 CapsuleCollider:
@@ -5438,9 +5436,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 3.6724057
+  m_Height: 3.065343
   m_Direction: 1
-  m_Center: {x: 0, y: 1.3362029, z: 0}
+  m_Center: {x: -0, y: 1.5355453, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
