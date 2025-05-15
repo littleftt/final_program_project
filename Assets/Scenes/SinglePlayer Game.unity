@@ -5405,9 +5405,9 @@ MonoBehaviour:
   isGameOver: 0
   jumpSfx: {fileID: 8300000, guid: 113ee460fadc340e4957a7404a9fbb27, type: 3}
   deathSfx: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
-  healSfx: {fileID: 8300000, guid: e7ee25a47d63b46cdaf65480d62b405c, type: 3}
+  healSfx: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
   hitSfx: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
-  coinSfx: {fileID: 8300000, guid: e7ee25a47d63b46cdaf65480d62b405c, type: 3}
+  coinSfx: {fileID: 8300000, guid: 08ab7053d586c458db3774d33c141a4b, type: 3}
   playerAudio: {fileID: 1667492346595872702}
   dirt: {fileID: 1438565936, guid: fb82dfb8d1c7044c69afd2486befecb3, type: 3}
   explosion: {fileID: 9125212449759046732, guid: cb7cd9b0c56a24d49a40784bd3203ae6, type: 3}
